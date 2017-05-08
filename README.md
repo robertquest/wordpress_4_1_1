@@ -25,17 +25,33 @@ nano /etc/apache2/sites-enabled/000-default.conf
         </Directory>
 </VirtualHost>
 
+Go to 
 cd /var/www/html
+Remove all file in directory
 rm -rf *
+
+Go to up 
 cd ../
+
+Create folder name staging
 mkdir staging
+
+Go to 
 cd staging
-git clone https://github.com/andrewpuch/wordpress_4_1_1.git .
+
+Download WordPress from git repository 
+git clone https://github.com/robertquest/wordpress_4_1_1.git .
+
+Change permision 
 chmod -R 744 .
+
+Change owner user:group
 chown -R www-data:www-data .
 
+Restart services
 service apache2 restart
 ```
+
 After Wordpress Is Configured
 -----------------------------
 ```
